@@ -1,0 +1,37 @@
+<h1>Credential</h1>
+<br/>
+<form [formGroup]="Form" (ngSubmit)="onSubmit()">
+  <div>
+    Key:
+    <input type="text" formControlName="key" [ngClass]="{ 'is-invalid': submitted && f.key.errors }" >
+    <div *ngIf="submitted && f.key.errors">
+      <div *ngIf="f.key.errors.required">Required field</div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div>
+    Shared secret:
+    <input type="text" formControlName="shared_secret" [ngClass]="{ 'is-invalid': submitted && f.shared_secret.errors }" >
+    <div *ngIf="submitted && f.shared_secret.errors">
+      <div *ngIf="f.shared_secret.errors.required">Required field</div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div>
+    <button type="submit" [ngClass]="{ 'is-invalid': submitted && error!='' }">Start</button>
+    <div *ngIf="submitted && error!=''">
+      <br/>
+      <br/>
+      {{error}}
+    </div>
+    <div *ngIf="submitted && result!=''">
+      <br/>
+      <br/>
+      {{result}}
+    </div>
+  </div>
+  <br/>
+  <br/>
+</form>

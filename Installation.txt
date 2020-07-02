@@ -1,0 +1,42 @@
+**** nodejs ****
+
+\masterdevel\prueba\nodejs
+npm init
+{
+  "name": "pruebanodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Godoy",
+  "license": "ISC"
+}
+npm install express 
+npm install express-session
+npm install cookie-parser
+npm i crypto-js --save
+
+node app.js
+
+**** angularjs ****
+
+cd \masterdevel\prueba\
+ng new angularjs
+cd angularjs
+ng generate component home
+ng generate component header
+ng generate component footer
+ng generate component message
+ng generate component message_id
+ng generate component message_tag
+npm install --save-dev @angular/http
+npm i crypto-js --save
+
+ng build --prod=true
+rm \masterdevel\prueba\nodejs\public -R
+cp \masterdevel\prueba\angularjs\dist\angularjs \masterdevel\prueba\nodejs\public -R
+
+
+

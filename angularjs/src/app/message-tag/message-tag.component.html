@@ -1,0 +1,36 @@
+<h1>Message Tag</h1>
+<br/>
+<form [formGroup]="Form" (ngSubmit)="onSubmit()">
+  <div>
+    Tag:
+    <input type="text" formControlName="tag" [ngClass]="{ 'is-invalid': submitted && f.tag.errors }" >
+    <div *ngIf="submitted && f.tag.errors">
+      <div *ngIf="f.tag.errors.required">Required field</div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div>
+    <button type="submit" [ngClass]="{ 'is-invalid': submitted && error!='' }">Get</button>
+    <div *ngIf="submitted && error!=''">
+      <br/>
+      <br/>
+      {{error}}
+    </div>
+    <div *ngIf="submitted && result!=''">
+      <br/>
+      <br/>
+      {{result}}
+      <br/>
+      <br/>
+      <div *ngFor="let d of data">
+        id: {{d.value.id}}<br/>
+        msg: {{d.value.msg}}<br/>
+        tags: {{d.value.tags}}<br/>
+        <br/>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+</form>
